@@ -1,0 +1,17 @@
+{
+    "name": "ford-rt/utils4php",
+    "description": "Utils 4 PHP",
+    "type": "library",
+    "license": "LGPL v3+",
+    "authors": [
+        {
+            "name": "Joe Ford",
+            "email": "ford153focus@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ext-zip": "*",
+        "ext-curl": "*"
+    }
+}
