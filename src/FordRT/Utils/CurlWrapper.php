@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace FordRT\Utils4Php;
+namespace FordRT\Utils;
 
 use CurlHandle;
 use JetBrains\PhpStorm\ArrayShape;

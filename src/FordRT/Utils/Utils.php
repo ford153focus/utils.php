@@ -5,12 +5,12 @@
 
 declare(strict_types=1);
 
-namespace FordRT\Utils4Php;
+namespace FordRT\Utils;
 
 /**
  * Class Utils
  *
- * @package FordRT\Utils4Php
+ * @package FordRT\Utils
  */
 class Utils
 {
@@ -41,7 +41,7 @@ class Utils
     public static function compressFolderToZip(string $directoryPath, $archivePath = null, bool $outputToBrowser = null): ?string
     {
         if (!is_dir($directoryPath)) {
-            throw new \Exception("Path $directoryPath is not directory");
+            throw new \RuntimeException("Path $directoryPath is not directory");
         }
 
         $archivePath = $archivePath ?? sprintf('/tmp/%s.zip', self::pwgen());

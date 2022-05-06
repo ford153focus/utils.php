@@ -1,13 +1,18 @@
 <?php
+/**
+ * Utils for 1C Bitrix CMS
+ * @author  Joe Ford <ford153focus@gmail.com>
+ */
 
-namespace FordRT\Utils4Php\CMS;
+namespace FordRT\Utils\CMS;
 
 class BitrixUtils
 {
     public static function getElementProperties($iblock_id, $element_id): array
     {
         $properties=[];
-        $properties_handler = CIBlockElement::GetProperty($iblock_id, $element_id);
+        /** @noinspection PhpUndefinedClassInspection */
+        $properties_handler = \CIBlockElement::GetProperty($iblock_id, $element_id);
         while ($ar_props = $properties_handler->Fetch()) {
             $properties[] = $ar_props;
         } //collect properties
@@ -24,19 +29,23 @@ class BitrixUtils
 
     public static function getElementSection($id)
     {
-        $blockListRes = CIBlockElement::GetList([], ['ID' => $id], false, false, ['ID', 'IBLOCK_SECTION_ID']);
+        /** @noinspection PhpUndefinedClassInspection */
+        $blockListRes = \CIBlockElement::GetList([], ['ID' => $id], false, false, ['ID', 'IBLOCK_SECTION_ID']);
         if($blockRes = $blockListRes->Fetch())
         {
-            return CIBlockSection::GetByID($blockRes['IBLOCK_SECTION_ID']);
+            /** @noinspection PhpUndefinedClassInspection */
+            return \CIBlockSection::GetByID($blockRes['IBLOCK_SECTION_ID']);
         }
         return null;
     }
 
     public static function getSectionPicture($sectionID)
     {
-        $sectionHandler = CIBlockSection::GetByID($sectionID);
+        /** @noinspection PhpUndefinedClassInspection */
+        $sectionHandler = \CIBlockSection::GetByID($sectionID);
         if($section = $sectionHandler->GetNext()) {
-            return CFile::GetPath($section["PICTURE"]);
+            /** @noinspection PhpUndefinedClassInspection */
+            return \CFile::GetPath($section["PICTURE"]);
         }
         return null;
     }

@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace FordRT\Utils4Php;
+namespace FordRT\Utils;
 
 /**
  * Class Validators
  *
- * @package FordRT\Utils4Php
+ * @package FordRT\Utils
  */
 class Validators
 {

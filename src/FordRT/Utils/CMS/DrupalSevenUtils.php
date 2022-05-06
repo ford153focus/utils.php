@@ -1,12 +1,12 @@
 <?php
 declare(strict_types = 1);
 
-namespace FordRT\Utils4Php\CMS;
+namespace FordRT\Utils\CMS;
 
 /**
  * Class Utils
  *
- * @package FordRT\Utils4Php
+ * @package FordRT\Utils
  */
 class DrupalSevenUtils
 {
@@ -15,6 +15,7 @@ class DrupalSevenUtils
      * @param  SelectQueryInterface  $query
      *
      * @return string
+     * @noinspection PhpUndefinedClassInspection
      */
     public static function PrintSelectQuery(SelectQueryInterface $query): string
     {
@@ -22,11 +23,12 @@ class DrupalSevenUtils
         $arguments = $query->arguments();
 
         if (!empty($arguments) && is_array($arguments)) {
-            foreach ($arguments as $placeholder => &$value) {
+            foreach ($arguments as &$value) {
                 if (is_string($value)) {
                     $value = "'$value'";
                 }
             }
+            unset($value);
 
             $string = strtr($string, $arguments);
         }

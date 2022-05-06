@@ -5,12 +5,12 @@
 
 declare(strict_types=1);
 
-namespace FordRT\Utils4Php;
+namespace FordRT\Utils;
 
 /**
  * Class DateTimeUtils
  *
- * @package FordRT\Utils4Php
+ * @package FordRT\Utils
  */
 class DateTimeUtils
 {

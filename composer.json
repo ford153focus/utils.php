@@ -1,6 +1,6 @@
 {
-    "name": "ford-rt/utils4php",
-    "description": "Utils 4 PHP",
+    "name": "ford-rt/utils",
+    "description": "Utils for PHP",
     "type": "library",
     "license": "LGPL v3+",
     "authors": [
